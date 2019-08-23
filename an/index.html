@@ -8,334 +8,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5e7a22cbdfcff9e10b293d3031f8fcc3?family=Camellia">
     <title>An Huynh Resume</title>
-    <link rel="stylesheet" href="style/Style.css">
-    <link rel="stylesheet" href="style/info-style.css">
-    <link rel="stylesheet" href="style/Responsive.css">
-    <link rel="stylesheet" href="style/century-gothic-cufonfonts-webfont/century-gothic.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="style/carousel.js" type="text/javascript"></script>
-<body>
-<style>
-    .m-layout {
-        display: grid;
-        grid-template-columns: min-content 85%;
-        height: calc(100vw - 5px);
-    }
-    .m-layout > div {
-        text-align: center;
-        padding: 20px 0;
-        font-size: 30px;
-    }
-    .m-layout > .item1 {
-        background-color: #ecefd8;
-    }
-    .left-layout {
-        height: fit-content;
-        padding: 20px 5px;
-    }
-    .in-grid {
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-gap: 10px;
-        padding: 15px;
-    }
-    .right-layout {
-        height: fit-content;
-        grid-template-rows: auto auto;
-    }
-    .right-layout > .item1 {
-        background-color: #ecefd8;
-        height: fit-content;
-        margin-top: -35px;
-    }
-    .right-layout > .item2 {
-        margin-left: 60px;
-    }
-    /*carousel*/
-    .container {
-        width: 1000px;
-        position: relative;
-        margin: 60px auto;
-    }
-    .Pics {
-        display: none;
-    }
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        alignment: center;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: black;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-    }
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-        color: white;
-    }
-    .prev {
-        left: 0;
-        color: white;
-    }
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    .text {
-        color: grey;
-        font-size: 15px;
-        padding: 8px 12px;
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        text-align: center;
-    }
-    .number {
-        color: white;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        background-color: rgba(0,0,0,.4);
-        border-radius: 3px;
-        top: 0;
-    }
-    .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1s;
-        animation-name: fade;
-        animation-duration: 1s;
-    }
-    @-webkit-keyframes fade {
-        from {
-            opacity: .4
+    <style>
+        @font-face {
+            font-family: "Century Gothic";
+            src: url("century-gothic-cufonfonts-webfont/GOTHIC.woff") format("woff"),
+            url("century-gothic-cufonfonts-webfont/GOTHICB.woff") format("woff"),
+            url("century-gothic-cufonfonts-webfont/GOTHICBI.woff") format("woff"),
+            url("century-gothic-cufonfonts-webfont/GOTHICI.woff") format("woff");
         }
-        to {
-            opacity: 1
-        }
-    }
-    @keyframes fade {
-        from {
-            opacity: .4
-        }
-        to {
-            opacity: 1
-        }
-    }
-    .Avatar {
-        width: 200px;
-        height: 200px;
-        display: flex;
-        margin: auto;
-        border-radius: 50%;
-        background-image: url("http://bit.ly/2MFZerM");
-        background-position: center;
-        background-size: contain;
-    }
-    .p-info > div {
-        font-family: Cambria;
-        font-size: 17px;
-        margin: 0px 15px 5px 35px;
-        text-align: justify;
-    }
-    icon {
-        text-align: center;
-    }
-    .l-lines {
-        border-top: 1px ridge rgba(30, 30, 30, .4);
-        width: 30%;
-        margin-left: 35px;
-    }
-    .hd1 {
-        font-family: "Myriad Pro";
-        text-align: left;
-        font-size: 35px;
-        color: rgba(80, 80, 80, 1);
-        font-weight: bold;
-        margin: 20px 15px 5px 35px;
-    }
-    .timeline {
-        height: fit-content;
-        font-family: "Century Gothic";
-        font-size: 22px;
-        font-weight: bolder;
-        color: rgba(50, 20, 20, .9);
-        margin: 10px 15px 10px 35px;
-        text-align: left;
-    }
-    .timeline > div {
-        border-left: 3px ridge rgba(20, 30, 90, .5);
-        margin: 10px 20px;
-        font-family: Cambria;
-        color: rgba(60, 60, 60, .9);
-        font-size: 18px;
-        padding-left: 20px;
-    }
-    .timeline > div > p {
-        color: rgba(0, 0, 0, .9);
-        font-size: 18px;
-        padding: 0px 10px 10px;
-    }
-    .hd1-content {
-        height: fit-content;
-        font-family: "Century Gothic";
-        font-weight: bolder;
-        color: rgba(0, 0, 0, .9);
-        font-size: 18px;
-        padding: 0px 10px 10px;
-        margin: 10px 15px 10px 35px;
-        text-align: left;
-    }
-    .Name {
-        font-family: Camellia;
-        font-size: 50px;
-        padding-left: 60px;
-        padding-top: 40px;
-        text-align: left;
-        color: #200f21;
-    }
-    .Title {
-        font-family: Victorian;
-        font-size: 30px;
-        padding-left: 60px;
-        margin-top: -50px;
-        padding-bottom: 20px;
-        text-align: left;
-        font-weight: bolder;
-        color: #032535;
-    }
-    .hd2 {
-        font-family: "Myriad Pro";
-        text-align: left;
-        font-size: 35px;
-        color: rgba(80, 80, 80, 1);
-        font-weight: bold;
-        margin-bottom: -20px;
-    }
-    .hd2-content {
-        font-family: Cambria;
-        font-size: 18px;
-        text-align: justify;
-        line-height: 25px;
-        padding: 10px 50px 5px 20px;
-    }
-    .JTitle {
-        font-family: "Century Gothic";
-        font-size: 25px;
-        text-align: left;
-        font-weight: bolder;
-        margin-top: -20px;
-        color: rgba(30, 20, 20, .9);
-        padding-top: 15px;
-    }
-    .Wperiod {
-        font-family: "Century Gothic";
-        font-size: 20px;
-        margin: 20px 0px 40px;
-        text-align: left;
-        font-weight: bold;
-        color: rgba(30, 20, 20, .9);
-    }
-    .r-lines {
-        border-top: 1px ridge rgba(30, 30, 30, .2);
-        box-shadow: grey;
-        width: 100%;
-        float: left;
-        margin-top: -55px;
-        margin-left: 120px;
-    }
-    ul.list-cir {
-        list-style-type: circle;
-        margin-top: -20px;
-        font-family: Cambria;
-        font-size: 18px;
-        text-align: justify;
-        line-height: 25px;
-        padding-left: 30px;
-    }
-    /*Reponsive*/
-    @media only screen and (max-width: 767px) {
-        /* For mobile phones: */
-        .left-layout, .Avatar  {
-            display: none;
+        @font-face {
+            font-family: "Myriad Pro";
+            src: url("myriad-pro-cufonfonts-webfont/MYRIADPRO-BOLD.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-BOLDCOND.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-BOLDCONDIT.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-COND.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-CONDIT.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-REGULAR.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-SEMIBOLD.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-SEMIBOLDIT.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MyriadPro-Light.woff") format("woff"),
+            url("myriad-pro-cufonfonts-webfont/MYRIADPRO-BOLDIT.woff") format("woff");
         }
         .m-layout {
-            grid-template-columns: 0px calc(100% - 0px);
+            display: grid;
+            grid-template-columns: min-content 85%;
+            height: calc(100vw - 5px);
         }
+        .m-layout > div {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+        .m-layout > .item1 {
+            background-color: #ecefd8;
+        }
+        .left-layout {
+            height: fit-content;
+            padding: 20px 5px;
+        }
+        .in-grid {
+            display: grid;
+            grid-template-columns: 20% 80%;
+            grid-gap: 10px;
+            padding: 15px;
+        }
+        .right-layout {
+            height: fit-content;
+            grid-template-rows: auto auto;
+        }
+        .right-layout > .item1 {
+            background-color: #ecefd8;
+            height: fit-content;
+            margin-top: -35px;
+        }
+        .right-layout > .item2 {
+            margin-left: 60px;
+        }
+        /*carousel*/
         .container {
-            width: 90vw;
-            position: center;
+            width: 1000px;
+            position: relative;
+            margin: 60px auto;
+        }
+        .Pics {
+            display: none;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            alignment: center;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            color: white;
+        }
+        .prev {
+            left: 0;
+            color: white;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .text {
+            color: grey;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .number {
+            color: white;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            background-color: rgba(0,0,0,.4);
+            border-radius: 3px;
+            top: 0;
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1s;
+            animation-name: fade;
+            animation-duration: 1s;
+        }
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        .Avatar {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            margin: auto;
+            border-radius: 50%;
+            background-image: url("http://bit.ly/2MFZerM");
+            background-position: center;
+            background-size: contain;
+        }
+        .p-info > div {
+            font-family: Cambria;
+            font-size: 17px;
+            margin: 0 15px 5px 35px;
+            text-align: justify;
+        }
+        icon {
+            text-align: center;
+        }
+        .l-lines {
+            border-top: 1px ridge rgba(30, 30, 30, .4);
+            width: 30%;
+            margin-left: 35px;
+        }
+        .hd1 {
+            font-family: "Myriad Pro";
+            text-align: left;
+            font-size: 35px;
+            color: rgba(80, 80, 80, 1);
+            font-weight: bold;
+            margin: 20px 15px 5px 35px;
         }
         .timeline {
-            margin: 1vw;
+            height: fit-content;
+            font-family: "Century Gothic";
+            font-size: 22px;
+            font-weight: bolder;
+            color: rgba(50, 20, 20, .9);
+            margin: 10px 15px 10px 35px;
+            text-align: left;
+        }
+        .timeline > div {
+            border-left: 3px ridge rgba(20, 30, 90, .5);
+            margin: 10px 20px;
+            font-family: Cambria;
+            color: rgba(60, 60, 60, .9);
+            font-size: 18px;
+            padding-left: 20px;
+        }
+        .timeline > div > p {
+            color: rgba(0, 0, 0, .9);
+            font-size: 18px;
+            padding: 0 10px 10px;
+        }
+        .hd1-content {
+            height: fit-content;
+            font-family: "Century Gothic";
+            font-weight: bolder;
+            color: rgba(0, 0, 0, .9);
+            font-size: 18px;
+            padding: 0 10px 10px;
+            margin: 10px 15px 10px 35px;
+            text-align: left;
+        }
+        .Name {
+            font-family: Camellia;
+            font-size: 50px;
+            padding-left: 60px;
+            padding-top: 40px;
+            text-align: left;
+            color: #200f21;
+        }
+        .Title {
+            font-family: Victorian;
+            font-size: 30px;
+            padding-left: 60px;
+            margin-top: -50px;
+            padding-bottom: 20px;
+            text-align: left;
+            font-weight: bolder;
+            color: #032535;
+        }
+        .hd2 {
+            font-family: "Myriad Pro";
+            text-align: left;
+            font-size: 35px;
+            color: rgba(80, 80, 80, 1);
+            font-weight: bold;
+            margin-bottom: -20px;
+        }
+        .hd2-content {
+            font-family: Cambria;
+            font-size: 18px;
+            text-align: justify;
+            line-height: 25px;
+            padding: 10px 50px 5px 20px;
+        }
+        .JTitle {
+            font-family: "Century Gothic";
+            font-size: 25px;
+            text-align: left;
+            font-weight: bolder;
+            margin-top: -20px;
+            color: rgba(30, 20, 20, .9);
+            padding-top: 15px;
+        }
+        .Wperiod {
+            font-family: "Century Gothic";
+            font-size: 20px;
+            margin: 20px 0 40px;
+            text-align: left;
+            font-weight: bold;
+            color: rgba(30, 20, 20, .9);
         }
         .r-lines {
-            width: 75%;
-            float: right;
-            margin-left: 3vw;
+            border-top: 1px ridge rgba(30, 30, 30, .2);
+            box-shadow: grey;
+            width: 100%;
+            float: left;
+            margin-top: -55px;
+            margin-left: 120px;
         }
-    }
-    @media only screen and (max-width: 414px) {
-        .right-layout > .item1 {
-            height: fit-content;
+        ul.list-cir {
+            list-style-type: circle;
+            margin-top: -20px;
+            font-family: Cambria;
+            font-size: 18px;
+            text-align: justify;
+            line-height: 25px;
+            padding-left: 30px;
         }
-        .Name {
-            padding: 5vw 1vw;
-            font-size: 8vw;
+        /*Reponsive*/
+        @media only screen and (max-width: 767px) {
+            /* For mobile phones: */
+            .left-layout, .Avatar  {
+                display: none;
+            }
+            .m-layout {
+                grid-template-columns: 0 calc(100% - 0px);
+            }
+            .container {
+                width: 90vw;
+                position: center;
+            }
+            .timeline {
+                margin: 1vw;
+            }
+            .r-lines {
+                width: 75%;
+                float: right;
+                margin-left: 3vw;
+            }
         }
-        .Title {
-            padding: 0vw 1vw 0vw;
-            font-size: 4vw;
+        @media only screen and (max-width: 414px) {
+            .right-layout > .item1 {
+                height: fit-content;
+            }
+            .Name {
+                padding: 5vw 1vw;
+                font-size: 8vw;
+            }
+            .Title {
+                padding: 0 1vw 0;
+                font-size: 4vw;
+            }
+            .right-layout > .item2 {
+                margin: 1vw;
+            }
+            .hd2 {
+                font-size: 5vw;
+            }
+            .hd2-content {
+                font-size: 3.5vw;
+                padding: 2vw;
+            }
+            .JTitle,.Wperiod {
+                font-size: 4vw;
+                padding: 1vw 3vw 1vw 3vw;
+            }
         }
-        .right-layout > .item2 {
-            margin: 1vw;
+        @media only screen and (min-width: 415px)and (max-width: 766px) {
+            .right-layout > .item1 {
+                height: fit-content;
+            }
+            .Name {
+                padding: 1vw;
+                font-size: 10vw;
+            }
+            .Title {
+                padding-left: 1vw;
+                font-size: 8vw;
+            }
+            .right-layout > .item2 {
+                margin: 1vw;
+            }
+            .hd2 {
+                font-size: 6vw;
+            }
+            .hd2-content {
+                font-size: 3.5vw;
+                padding: 1vw 3vw 1vw 3vw;
+            }
+            .JTitle,.Wperiod {
+                font-size: 4vw;
+                padding: 1vw 3vw 1vw 3vw;
+            }
         }
-        .hd2 {
-            font-size: 5vw;
-        }
-        .hd2-content {
-            font-size: 3.5vw;
-            padding: 2vw;
-        }
-        .JTitle,.Wperiod {
-            font-size: 4vw;
-            padding: 1vw 3vw 1vw 3vw;
-        }
-    }
-    @media only screen and (min-width: 415px)and (max-width: 766px) {
-        .right-layout > .item1 {
-            height: fit-content;
-        }
-        .Name {
-            padding: 1vw;
-            font-size: 10vw;
-        }
-        .Title {
-            padding-left: 1vw;
-            font-size: 8vw;
-        }
-        .right-layout > .item2 {
-            margin: 1vw;
-        }
-        .hd2 {
-            font-size: 6vw;
-        }
-        .hd2-content {
-            font-size: 3.5vw;
-            padding: 1vw 3vw 1vw 3vw;
-        }
-        .JTitle,.Wperiod {
-            font-size: 4vw;
-            padding: 1vw 3vw 1vw 3vw;
-        }
-    }
-</style>
+    </style>
+<body>
 <div class="m-layout">
     <div class="item1">
         <div class="Avatar">
@@ -463,7 +478,6 @@
                         </div>
                         <p class="Wperiod">Dec, 2017
                         <hr class="r-lines">
-                        </p>
                         <div>
                             <p class="JTitle">Account Executive at Hakuhodo & Saigon Advertising</p>
                             <div class="hd2-content">
@@ -537,7 +551,6 @@
     function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("Pics");
-        var dots = document.getElementsByClassName("dot");
         if (n > slides.length) {
             slideIndex = 1
         }
