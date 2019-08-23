@@ -1,10 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    source : http://bit.ly/2OksjeR
+-->
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5e7a22cbdfcff9e10b293d3031f8fcc3?family=Camellia">
+    <title>An Huynh Resume</title>
+    <link rel="stylesheet" href="style/Style.css">
+    <link rel="stylesheet" href="style/info-style.css">
+    <link rel="stylesheet" href="style/Responsive.css">
+    <link rel="stylesheet" href="style/century-gothic-cufonfonts-webfont/century-gothic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="style/carousel.js" type="text/javascript"></script>
 <body>
-
+<style>
+    .m-layout {
+        display: grid;
+        grid-template-columns: min-content 85%;
+        height: calc(100vw - 5px);
+    }
+    .m-layout > div {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+    .m-layout > .item1 {
+        background-color: #ecefd8;
+    }
+    .left-layout {
+        height: fit-content;
+        padding: 20px 5px;
+    }
+    .in-grid {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-gap: 10px;
+        padding: 15px;
+    }
+    .right-layout {
+        height: fit-content;
+        grid-template-rows: auto auto;
+    }
+    .right-layout > .item1 {
+        background-color: #ecefd8;
+        height: fit-content;
+        margin-top: -35px;
+    }
+    .right-layout > .item2 {
+        margin-left: 60px;
+    }
+    /*carousel*/
+    .container {
+        width: 1000px;
+        position: relative;
+        margin: 60px auto;
+    }
+    .Pics {
+        display: none;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        alignment: center;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        color: white;
+    }
+    .prev {
+        left: 0;
+        color: white;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .text {
+        color: grey;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .number {
+        color: white;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        background-color: rgba(0,0,0,.4);
+        border-radius: 3px;
+        top: 0;
+    }
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1s;
+        animation-name: fade;
+        animation-duration: 1s;
+    }
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    .Avatar {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        margin: auto;
+        border-radius: 50%;
+        background-image: url("http://bit.ly/2MFZerM");
+        background-position: center;
+        background-size: contain;
+    }
+    .p-info > div {
+        font-family: Cambria;
+        font-size: 17px;
+        margin: 0px 15px 5px 35px;
+        text-align: justify;
+    }
+    icon {
+        text-align: center;
+    }
+    .l-lines {
+        border-top: 1px ridge rgba(30, 30, 30, .4);
+        width: 30%;
+        margin-left: 35px;
+    }
+    .hd1 {
+        font-family: "Myriad Pro";
+        text-align: left;
+        font-size: 35px;
+        color: rgba(80, 80, 80, 1);
+        font-weight: bold;
+        margin: 20px 15px 5px 35px;
+    }
+    .timeline {
+        height: fit-content;
+        font-family: "Century Gothic";
+        font-size: 22px;
+        font-weight: bolder;
+        color: rgba(50, 20, 20, .9);
+        margin: 10px 15px 10px 35px;
+        text-align: left;
+    }
+    .timeline > div {
+        border-left: 3px ridge rgba(20, 30, 90, .5);
+        margin: 10px 20px;
+        font-family: Cambria;
+        color: rgba(60, 60, 60, .9);
+        font-size: 18px;
+        padding-left: 20px;
+    }
+    .timeline > div > p {
+        color: rgba(0, 0, 0, .9);
+        font-size: 18px;
+        padding: 0px 10px 10px;
+    }
+    .hd1-content {
+        height: fit-content;
+        font-family: "Century Gothic";
+        font-weight: bolder;
+        color: rgba(0, 0, 0, .9);
+        font-size: 18px;
+        padding: 0px 10px 10px;
+        margin: 10px 15px 10px 35px;
+        text-align: left;
+    }
+    .Name {
+        font-family: Camellia;
+        font-size: 50px;
+        padding-left: 60px;
+        padding-top: 40px;
+        text-align: left;
+        color: #200f21;
+    }
+    .Title {
+        font-family: Victorian;
+        font-size: 30px;
+        padding-left: 60px;
+        margin-top: -50px;
+        padding-bottom: 20px;
+        text-align: left;
+        font-weight: bolder;
+        color: #032535;
+    }
+    .hd2 {
+        font-family: "Myriad Pro";
+        text-align: left;
+        font-size: 35px;
+        color: rgba(80, 80, 80, 1);
+        font-weight: bold;
+        margin-bottom: -20px;
+    }
+    .hd2-content {
+        font-family: Cambria;
+        font-size: 18px;
+        text-align: justify;
+        line-height: 25px;
+        padding: 10px 50px 5px 20px;
+    }
+    .JTitle {
+        font-family: "Century Gothic";
+        font-size: 25px;
+        text-align: left;
+        font-weight: bolder;
+        margin-top: -20px;
+        color: rgba(30, 20, 20, .9);
+        padding-top: 15px;
+    }
+    .Wperiod {
+        font-family: "Century Gothic";
+        font-size: 20px;
+        margin: 20px 0px 40px;
+        text-align: left;
+        font-weight: bold;
+        color: rgba(30, 20, 20, .9);
+    }
+    .r-lines {
+        border-top: 1px ridge rgba(30, 30, 30, .2);
+        box-shadow: grey;
+        width: 100%;
+        float: left;
+        margin-top: -55px;
+        margin-left: 120px;
+    }
+    ul.list-cir {
+        list-style-type: circle;
+        margin-top: -20px;
+        font-family: Cambria;
+        font-size: 18px;
+        text-align: justify;
+        line-height: 25px;
+        padding-left: 30px;
+    }
+    /*Reponsive*/
+    @media only screen and (max-width: 767px) {
+        /* For mobile phones: */
+        .left-layout, .Avatar  {
+            display: none;
+        }
+        .m-layout {
+            grid-template-columns: 0px calc(100% - 0px);
+        }
+        .container {
+            width: 90vw;
+            position: center;
+        }
+        .timeline {
+            margin: 1vw;
+        }
+        .r-lines {
+            width: 75%;
+            float: right;
+            margin-left: 3vw;
+        }
+    }
+    @media only screen and (max-width: 414px) {
+        .right-layout > .item1 {
+            height: fit-content;
+        }
+        .Name {
+            padding: 5vw 1vw;
+            font-size: 8vw;
+        }
+        .Title {
+            padding: 0vw 1vw 0vw;
+            font-size: 4vw;
+        }
+        .right-layout > .item2 {
+            margin: 1vw;
+        }
+        .hd2 {
+            font-size: 5vw;
+        }
+        .hd2-content {
+            font-size: 3.5vw;
+            padding: 2vw;
+        }
+        .JTitle,.Wperiod {
+            font-size: 4vw;
+            padding: 1vw 3vw 1vw 3vw;
+        }
+    }
+    @media only screen and (min-width: 415px)and (max-width: 766px) {
+        .right-layout > .item1 {
+            height: fit-content;
+        }
+        .Name {
+            padding: 1vw;
+            font-size: 10vw;
+        }
+        .Title {
+            padding-left: 1vw;
+            font-size: 8vw;
+        }
+        .right-layout > .item2 {
+            margin: 1vw;
+        }
+        .hd2 {
+            font-size: 6vw;
+        }
+        .hd2-content {
+            font-size: 3.5vw;
+            padding: 1vw 3vw 1vw 3vw;
+        }
+        .JTitle,.Wperiod {
+            font-size: 4vw;
+            padding: 1vw 3vw 1vw 3vw;
+        }
+    }
+</style>
+<div class="m-layout">
+    <div class="item1">
+        <div class="Avatar">
+        </div>
+        <div class="left-layout">
+            <div class="item1">
+                <div class="p-info">
+                    <div class="in-grid">
+                        <icon class="item1">
+                            <i class="fa fa-phone fa-lg" style="color: rgba(90, 90, 80, 1); padding-right: 20px"></i>
+                        </icon>
+                        <div class="item2">
+                            (+84) 96 289 5049
+                        </div>
+                        <icon class="item3">
+                            <i class="fa fa-envelope fa-lg" style="color: rgba(90, 90, 80, 1); padding-right: 20px"></i>
+                        </icon>
+                        <div class="item4">
+                            annhatminh.h@gmail.com
+                        </div>
+                        <icon class="item5">
+                            <i class="fa fa-map-marker fa-lg" style="color: rgba(90, 90, 80, 1); padding-right: 20px"></i>
+                        </icon>
+                        <div class="item6">Tan Binh District, Ho Chi Minh City, Vietnam</div>
+                    </div>
+                </div>
+            </div>
+            <hr class="l-lines">
+            <div class="item2">
+                <p class="hd1">
+                    Education
+                </p>
+                <div class="timeline">
+                    2011
+                    <div>
+                        Finance and Banking at Hoa Sen University
+                        <p>GPA: 3.28</p>
+                    </div>
+                    2013
+                    <div>
+                        Human Resources Management at Hoa Sen University
+                        <p>GPA: 3.32</p>
+                    </div>
+                    2016
+                </div>
+            </div>
+            <hr class="l-lines">
+            <div class="item3">
+                <p class="hd1">
+                    Key Skills
+                </p>
+                <div class="hd1-content">
+                    <p>Photography</p>
+                    <p>Layout Designing</p>
+                    <p>Logo Designing</p>
+                    <p>Video Making</p>
+                    <p>Problem Solving</p>
+                    <p>Time Management</p>
+                    <p>Project Management</p>
+                    <p>Team Leadership</p>
+                </div>
+            </div>
+            <hr class="l-lines">
+            <div class="item4">
+                <p class="hd1">
+                    Languages
+                </p>
+                <div class="hd1-content">
+                    English
+                    <div class="w3-grey">
+                        <div class="w3-container w3-blue-grey w3-center w3-opacity-min w3-text-white"
+                             style="width:85%">85%
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item2">
+        <div class="right-layout">
+            <div class="item1">
+                <p class="Name">
+                    HUYNH NHAT MINH AN
+                </p>
+                <p class="Title">
+                    Marketing Coordinator
+                </p>
+            </div>
+            <div class="item2">
+                <div>
+                    <p class="hd2">
+                        PROFESSIONAL PROFILE
+                    </p>
+                    <p class="hd2-content">
+                        Lorem ipsum ligula tortor sapien justo quam facilisis, pellentesque imperdiet est maecenas urna ad, eleifend augue tortor semper iaculis habitant ut diam neque bibendum vehicula duis enim habitasse cras mi varius, leo metus in morbi metus tincidunt ut adipiscing varius vehicula phasellus scelerisque vel gravida nunc malesuada, vehicula felis sem hendrerit aliquam eros velit tortor, sit cubilia malesuada aptent porta potenti habitasse tempus quam taciti condimentum quisque eros amet aenean, posuere curabitur eu leo purus amet sit, vitae suscipit potenti et lacus lorem scelerisque ultrices porta class tempus nullam lobortis egestas curae erat, odio a porta arcu dictumst nulla justo.
+                    </p>
+                </div>
+                <div>
+                    <p class="hd2">EXPERIENCE</p>
+                    <div class="timeline">
+                        <p class="Wperiod">Present</p>
+                        <div>
+                            <p class="JTitle">Marketing Executive at YKK Vietnam Representative Office</p>
+                            <div class="hd2-content">
+                                Lorem ipsum ligula tortor sapien justo quam facilisis, pellentesque imperdiet est
+                                maecenas urna ad, eleifend augue tortor semper iaculis habitant ut diam neque
+                                bibendum vehicula duis enim habitasse c
+                            </div>
+                        </div>
+                        <p class="Wperiod">Jul, 2018
+                        <hr class="r-lines">
+                        </p>
+                        <div>
+                            <p class="JTitle">Freelance Designer</p>
+                            <div class="hd2-content">
+                                <ul class="list-cir">
+                                    <li>Designing packaging for products as demand by clients.</li>
+                                    <li>Retouching files for printing and production.</li>
+                                    <li>Organizing the pages for brochures, magazines, newspapers, books and other
+                                        publications.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="Wperiod">Dec, 2017
+                        <hr class="r-lines">
+                        </p>
+                        <div>
+                            <p class="JTitle">Account Executive at Hakuhodo & Saigon Advertising</p>
+                            <div class="hd2-content">
+                                Lorem ipsum ligula tortor sapien justo quam facilisis, pellentesque imperdiet est
+                                maecenas urna ad, eleifend augue tortor semper iaculis habitant ut diam neque
+                                bibendum vehicula duis enim habitasse c
+                            </div>
+                        </div>
+                        <p class="Wperiod">Sep, 2016
+                        <hr class="r-lines">
+                        </p>
+                        <div>
+                            <p class="JTitle">Customer Service Representative at Jobstreet Vietnam</p>
+                            <div class="hd2-content">
+                                Lorem ipsum ligula tortor sapien justo quam facilisis, pellentesque imperdiet est
+                                maecenas urna ad, eleifend augue tortor semper iaculis habitant ut diam neque
+                                bibendum vehicula duis enim habitasse c
+                            </div>
+                        </div>
+                        <p class="Wperiod">May, 2016</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="hd2">
+                        MY PROJECT
+                    </p>
+                    <div class="container">
+                        <div class="Pics fade">
+                            <div class="number">1/5</div>
+                            <img src="carousel/1.jpg" style="width: 100%">
+                            <div class="1"></div>
+                        </div>
+                        <div class="Pics fade">
+                            <div class="number">2/5</div>
+                            <img src="carousel/2.jpg" style="width: 100%">
+                            <div class="text">2</div>
+                        </div>
+                        <div class="Pics fade">
+                            <div class="number">3/5</div>
+                            <img src="carousel/3.jpg" style="width: 100%">
+                            <div class="text">3</div>
+                        </div>
+                        <div class="Pics fade">
+                            <div class="number">4/5</div>
+                            <img src="carousel/4.jpg" style="width: 100%">
+                            <div class="text">4</div>
+                        </div>
+                        <div class="Pics fade">
+                            <div class="number">5/5</div>
+                            <img src="carousel/5.jpg" style="width: 100%">
+                            <div class="text">5</div>
+                        </div>
+                        <!--Button-->
+                        <a class="prev" onclick="slides(-1)">&#10094;</a>
+                        <a class="next" onclick="slides(1)">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var slideIndex = 0;
+    showSlides(slideIndex);
+    function slides(n) {
+        showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Pics");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
 </body>
 </html>
